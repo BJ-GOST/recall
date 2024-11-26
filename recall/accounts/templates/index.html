@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {%load static%}
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+    <title>Recall</title>
+</head>
+
+<body class="w-full min-h-96 flex flex-col items-center bg-green text-white font-semibold space-y-4">
+    
+    <nav class="w-full h-16 fixed top-0 left-0 flex flex-row items-center justify-between md:justify-start text-white">
+
+        <div class="w-1/4 h-full flex flex-row items-center p-2 md:p-6">
+            <a href="" class="w-12 h-8 text-white font-semibold flex flex-row items-center space-x-2">
+                <img src="{%static 'media/brain.png'%}" alt="" srcset="" class="w-8 h-8">
+                <span>Recall</span>
+            </a>
+        </div>
+
+        <div class="w-1/2 h-full hidden md:flex flex-row items-center justify-end text-xs space-x-4">
+            <a href="" class="text-white">Home</a>
+            <a href="" class="text-white">About</a>
+            <a href="" class="text-white">Services</a>
+            <a href="" class="text-white">Contact</a>
+        </div>
+
+        <div class="w-1/4 h-full flex flex-row items-center justify-end pr-2 md:pr-6">
+            <a href="{%url 'logIn'%}" class="bg-white rounded-md w-16 h-8 text-black text-center py-2 text-xs">Log In</a>
+        </div>
+    </nav>
+
+    <!-- spacer -->
+    <div class="w-full h-6"></div>
+    <!-- spacer -->
+
+    <section class="w-full min-h-[80vh] flex flex-col md:flex-row lg:flex-row items-center">
+
+        <div class="sm:w-full md:w-1/2 lg:w-1/2 h-1/2 md:h-full lg:h-full flex flex-col items-center justify-around">
+            <img src="{%static 'media/brain.png'%}" alt="" srcset="">
+        </div>
+
+
+        <div class="w-full md:w-1/2 h-1/2 md:h-full flex flex-col items-left p-2 md:p-6 space-y-4">
+
+            <h1 class="text-white font-semibold text-5xl">
+                Take Notes, Find Them Fast
+            </h1>
+
+            <p class="text-base w-full md:w-3/4">
+                Effortlessly create, organize, and retrieve your notes with 
+                powerful search and smart tags, so your thoughts are always 
+                within reach
+            </p>
+
+            <a href="{%url 'signUp'%}" class="bg-yellow rounded-md w-28 h-12 text-black flex flex-col items-center justify-around text-xs">Try out for free</a>
+
+        </div>
+
+
+    </section>
+   
+</body>
+
+</html>

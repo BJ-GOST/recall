@@ -1,0 +1,8 @@
+# virtual environment
+.venv
+
+#database
+# db.sqlite3
+
+#tailwind css
+recall/node_modules/

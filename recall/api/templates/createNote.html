@@ -1,0 +1,42 @@
+{%extends 'home.html' %}
+
+{%block title%} Create New Note {%endblock%}
+
+{%block content%}
+
+    <div class="w-full md:w-3/4 min-h-96 flex flex-col items-center space-y-4 p-2 md:p-6">
+ 
+        <form method="post" class="w-full min-h-[90vh] text-black flex flex-col items-left space-y-4">
+            {{form.media}}
+
+            {%csrf_token%}
+
+            {%if messages%}
+            <ul>
+                {%for message in messages%}
+                <li class="{{message.tags}}">{{message}}</li>
+                {%endfor%}
+            </ul>
+            {%endif%}
+
+            <div class="w-full h-8">
+                {{form.title}}
+            </div>
+
+            <div class="w-full h-8">
+                {{form.tags}}
+            </div>
+
+            <div class="w-full h-96">
+                {{form.body}}
+            </div>
+
+            
+            
+
+            <button type="submit" class="w-32 h-8 rounded-md flex flex-col items-center justify-around bg-white text-black text-sm">Create</button>
+        </form>
+
+    </div>
+
+{%endblock%}

@@ -1,0 +1,29 @@
+{%extends 'home.html' %}
+
+{%block title%} Note Detail {%endblock%}
+
+{%block content%}
+
+    <div class="w-[90vw] md:w-3/4 min-h-96 flex flex-col items-left bg-teal p-2 md:p-6 space-y-6 rounded-md">
+        
+        <div class="w-full min-h-24 flex flex-col items-left space-y-4">
+            <p class="text-2xl">{{note.title}}</p>
+            <p>{{note.body|safe}}</p>
+        </div>
+
+        <div class="w-full min-h-10 flex flex-row items-center space-x-2 flex-wrap gap-2 md:gap-1">
+            {% for tag in note.tags.all %}
+            <span class="w-fit h-8 md:h-1/2 bg-yellow text-black text-xs rounded-md flex flex-col items-center justify-around p-2">{{ tag.name }}</span>
+            {% empty %}
+            <span>No tags available</span>
+            {% endfor %}    
+        </div>
+
+        <div class="w-full min-h-10 flex flex-row items-center space-x-2">
+            <a href="{%url 'update-note' note.id%}" class="w-20 md:w-24 h-full md:h-3/4 p-2 bg-white text-black text-sm rounded-md text-center">Update</a>
+            <a href="{%url 'delete' note.id%}" class="w-20 md:w-24 h-full md:h-3/4 p-2 bg-red-400 text-white text-sm rounded-md text-center">Delete</a>
+        </div>
+
+    </div>
+
+{%endblock%}

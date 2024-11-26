@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.custom-input{
+    background: transparent;
+    border-bottom: 1px solid black;
+    outline: none;
+    width: 100%;
+    color: white;
+}
+
+.custom-input::placeholder {
+    color: #000;            
+    opacity: 0.5;             
+}
